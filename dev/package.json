@@ -1,0 +1,7 @@
+{
+  "name": "parca-atolyesi-dev",
+  "private": true,
+  "type": "module",
+  "description": "Geliştirici kontrolleri: paneli gerçek sunucuya karşı Playwright ile sürer.",
+  "devDependencies": { "playwright": "^1.50.0" }
+}

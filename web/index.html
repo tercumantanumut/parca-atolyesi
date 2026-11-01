@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parça Atölyesi</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l9 5v10l-9 5-9-5V7z' fill='%23f3e3c6' stroke='%23c8862a' stroke-width='1.6'/%3E%3C/svg%3E">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+<link rel="stylesheet" href="app/tezgah.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 5v14l11-7z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4M6.6 6.6C3.9 8.4 2 12 2 12s3.6 7 10 7a10 10 0 0 0 5.4-1.6"/></symbol>
+  <symbol id="i-rot" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></symbol>
+  <symbol id="i-blob" viewBox="0 0 24 24"><path d="M12 3c5 0 8 3 8 8s-3 10-8 10-8-5-8-10 3-8 8-8z"/></symbol>
+  <symbol id="i-paint" viewBox="0 0 24 24"><path d="M12 3c5 0 9 3.6 9 8 0 2.5-2 3-3.5 3H16a2 2 0 0 0-1.5 3.3c.8 1 .2 2.7-1.5 2.7-5 0-10-3.8-10-9s4-8 9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="11" cy="7" r="1"/><circle cx="16" cy="8" r="1"/></symbol>
+  <symbol id="i-parts" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="3" width="6" height="6" rx="1"/><rect x="16" y="15" width="6" height="6" rx="1"/><path d="M8 12h4M12 6v12M12 6h4M12 18h4"/></symbol>
+  <symbol id="i-seal" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="i-toon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></symbol>
+  <symbol id="i-px" viewBox="0 0 24 24"><path d="M4 4h4v4H4zM10 4h4v4h-4zM16 10h4v4h-4zM4 16h4v4H4zM10 10h4v4h-4zM10 16h4v4h-4z"/></symbol>
+  <symbol id="i-hist" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-dice" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="15" r="1"/><circle cx="15" cy="9" r="1"/><circle cx="9" cy="15" r="1"/></symbol>
+  <symbol id="i-zip" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M11 6h2M11 9h2M11 12h2M11 15h2v3h-2z"/></symbol>
+</svg>
+
+<header>
+  <div class="brand"><b>Parça Atölyesi</b><span>hunyuan3d · yerel</span></div>
+  <div class="sp"></div>
+  <div class="gpu wait" id="gpu" title="Ekran kartı"><i></i><span id="gpuName">Sunucuya bağlanıyor…</span></div>
+  <button class="hbtn tut" id="tutBtn" role="switch" aria-checked="false" hidden><span class="sw" aria-hidden="true"><i></i></span><span>Modelleri bellekte tut</span></button>
+  <button class="hbtn" id="histBtn" aria-expanded="false" aria-controls="pop"><svg class="i"><use href="#i-hist"/></svg>Geçmiş</button>
+</header>
+
+<section class="strip" id="strip" aria-label="Adımlar"></section>
+
+<main>
+  <aside class="panel left" aria-label="Girdi ve rota">
+    <div class="k">01 · Görsel</div>
+    <div class="drop" id="drop" aria-label="Görsel"></div>
+    <input type="file" id="fileOn" accept="image/png,image/jpeg,image/webp,.glb,.gltf,.obj,.ply,.stl" hidden>
+    <input type="file" id="fileArka" accept="image/png,image/jpeg,image/webp" hidden>
+    <div class="rhead"><span class="k">Rota</span><div class="seed" id="seed"></div></div>
+    <div class="routes" role="radiogroup" aria-label="Rota" id="routes"></div>
+    <div class="sp"></div>
+    <button class="go" id="go" disabled></button>
+  </aside>
+
+  <section class="stage" aria-label="3D görünüm">
+    <div id="view"></div>
+    <div class="ghostref" id="ghost"></div>
+    <div class="empty" id="empty"><div><svg class="i"><use href="#i-cube"/></svg><p>Model burada belirecek</p></div></div>
+    <div class="plate" id="plate"></div>
+    <div class="alert" id="alert" role="alert" hidden></div>
+    <div class="loading" id="loading" hidden>Yükleniyor</div>
+    <div class="vtop">
+      <div class="vmeta" id="vmeta"></div>
+      <div class="vt seg" id="vtab" role="group" aria-label="Görünüm"><button data-v="3d" aria-pressed="true">3D</button><button data-v="tp">Toon · Piksel</button></div>
+      <div class="clock" id="clock" aria-live="off"></div>
+    </div>
+    <div class="tools" id="tools">
+      <div class="seg" id="modes" role="group" aria-label="Görünüm modu">
+        <button data-m="textured">Dokulu</button><button data-m="clay">Kil</button><button data-m="parts">Parçalar</button>
+      </div>
+      <label>Patlat <input type="range" id="explode" min="0" max="1" step="0.01" value="0" aria-label="Patlat"><output id="exOut">0</output></label>
+      <button class="ibtn" id="turn" aria-pressed="true" title="Döndür" aria-label="Döndür"><svg class="i"><use href="#i-rot"/></svg></button>
+      <button class="ibtn" id="reset" title="Görünümü sıfırla" aria-label="Görünümü sıfırla"><svg class="i"><use href="#i-reset"/></svg></button>
+    </div>
+    <div class="plate-tools" id="ptools">
+      <span class="lab">Açı</span><div class="seg" id="angles" role="group" aria-label="Açı"></div>
+      <span class="lab">Boy</span><div class="seg" id="sizes" role="group" aria-label="Boy"></div>
+      <span class="lab">Palet</span><div class="palrow" id="pals"></div>
+    </div>
+  </section>
+
+  <aside class="panel right" id="right" aria-label="Ayrıntılar"></aside>
+</main>
+<div class="pop" id="pop" role="dialog" aria-label="Geçmiş"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script type="module" src="app/main.js"></script>
+</body>
+</html>

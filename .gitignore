@@ -1,0 +1,13 @@
+# machine-specific config and heavy local data
+atolye.toml
+.atolye/
+modeller/
+cikti/
+*.pyc
+__pycache__/
+node_modules/
+_scratch/
+# internal design notes (local only)
+design/
+.pytest_cache/
+*.part

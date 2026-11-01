@@ -1,0 +1,28 @@
+# Parça Atölyesi ayarları. Bu dosyayı "atolye.toml" adıyla kopyalayın (kurulum bunu kendisi de yapar).
+# Göreli yollar depo köküne göredir; mutlak yol da yazabilirsiniz (ör. "D:/atolye/modeller").
+
+[yollar]
+modeller = "modeller"   # model ağırlıkları, Hugging Face'ten indirilir (~21 GB zorunlu; 2mv ve X-Part ile ~35 GB)
+veri = ".atolye"        # Python ortamı (venv), kod kopyaları, derlenen eklentiler, torch tekerlekleri, kayıtlar
+cikti = "cikti"         # her işin çıktı klasörü
+blender = ""            # blender.exe yolu (4.2 veya üstü); boşsa PATH'te "blender" aranır
+
+[sunucu]
+adres = "127.0.0.1"
+port = 8731
+# web = "web"           # arayüz klasörü (varsayılan: depo kökündeki web/)
+
+[kurulum]
+python = "3.12"
+# CUDA araç seti (nvcc) ve Visual Studio C++ ortamı: yalnızca doku adımının iki eklentisini derlemek için.
+cuda = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6"
+vsvars = "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvars64.bat"
+# Boşsa otomatik: kartın kendi mimarisi; RTX 50 + 12.8 öncesi araç setinde "9.0+PTX" (sürücü JIT ile derler).
+cuda_arch = ""
+
+[sinirlar]
+# vram_tasma = false    # true: GPU adımlarına VRAM sınırı koyma (Windows paylaşılan belleğe taşabilir, yavaşlar)
+# vram_siniri_gb = 15   # sabit sınır: büyük kartta 16 GB'lık bir kartı denemek için
+
+[bellek]
+modelleri_tut = true   # yüklenen modeller işler arasında ekran kartında kalır (panelden de değişir)

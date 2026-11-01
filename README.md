@@ -115,7 +115,7 @@ rotaları kilitler. Ayrıntılar: [docs/rotalar-ve-vram.md](docs/rotalar-ve-vram
 | [Görsel ipuçları](docs/gorsel-ipuclari.md) | İyi sonuç veren görsel nasıl hazırlanır |
 | [Sorun giderme](docs/sorun-giderme.md) | Sık karşılaşılan sorunlar ve çözümleri |
 | [Lisanslar](docs/lisanslar.md) | Kod, modeller ve araçların lisansları, Türkçe özetleriyle |
-| [Tek sayfalık rehber](docs/gist.md) | Hepsinin kısa hali, baştan sona |
+| [Tek sayfalık rehber](docs/gist.md) ([gist](https://gist.github.com/tercumantanumut/13aef3ce6b35399a35202a9ef936ab08)) | Hepsinin kısa hali, baştan sona |
 
 ## Lisanslar: kısaca
 
